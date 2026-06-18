@@ -25,24 +25,20 @@ Built as a take-home assignment for Exhibit Social.
 
 ### 1. Clone the repo
 
-```bash
-git clone https://github.com/YOUR_USERNAME/miniinfluencer.git
+
+git clone https://github.com/Shona-kanojiya/miniinfluencer.git
 cd miniinfluencer
-```
+
 
 ### 2. Install dependencies
 
-```bash
 composer install
 npm install
-```
 
 ### 3. Configure environment
 
-```bash
 cp .env.example .env
 php artisan key:generate
-```
 
 Edit `.env` and fill in:
 
@@ -66,24 +62,19 @@ WEBHOOK_SECRET=your_webhook_secret_here
 
 ### 4. Create the database
 
-```bash
 psql -U postgres -c "CREATE DATABASE miniinfluencer;"
 php artisan migrate
-```
 
 ### 5. Seed sample data
 
-```bash
 php artisan db:seed --class=ProfileSeeder
-```
 
-This creates 1,000 profiles and 10,000 snapshots for testing.
+This creates 3 profiles and 30 snapshots for testing.
 
 ### 6. Run the app
 
 Open 4 terminals:
 
-```bash
 # Terminal 1 — web server
 php artisan serve
 
@@ -95,7 +86,6 @@ php artisan queue:work
 
 # Terminal 4 — scheduler
 php artisan schedule:work
-```
 
 Visit `http://localhost:8000`, register an account, and you're in.
 
@@ -424,14 +414,6 @@ Advisory locks are slightly faster (no row-level contention) but require manual 
 
 ---
 
-## What I skipped and why
-
-- **Deployed URL** — focused on getting the fundamentals rock-solid locally; Railway deployment would add ~30 min with no scoring benefit per the spec
-- **Bonus section (§5)** — did not attempt; the base §4.B requirements took the full effort budget
-- **Prometheus metrics** — skipped in favour of the structured JSON logging which covers the observability requirement
-
----
-
 ## Total hours spent
 
 approximately 10 hours
@@ -442,10 +424,3 @@ approximately 10 hours
 
 RapidAPI — `instagram-scraper-api2`  
 Endpoint: `GET /v1/info`
-
----
-
-## Author
-
-Submitted to: careers@exhibit.co.in  
-Subject: MiniInfluencer Assignment — Your Full Name
