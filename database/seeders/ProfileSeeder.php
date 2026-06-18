@@ -12,7 +12,7 @@ class ProfileSeeder extends Seeder
      */
     public function run(): void
     {
-        for ($i = 0; $i < 1000; $i++) {
+        for ($i = 0; $i < 3; $i++) {
             $profile = \App\Models\Profile::create([
                 'username'          => 'user_' . $i,
                 'status'            => collect(['pending','fetched','failed'])->random(),
