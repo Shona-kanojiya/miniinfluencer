@@ -71,6 +71,8 @@ class FetchProfileJob implements ShouldQueue
                 Profile::find($this->profileId)->username
             );
 
+            Log::info('Instagram data', $data);
+
             // 5. Write snapshot + update profile in one transaction
             DB::transaction(function () use ($data) {
                 ProfileSnapshot::create([

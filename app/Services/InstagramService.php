@@ -17,6 +17,7 @@ class InstagramService
             ->get('https://instagram-scraper-api2.p.rapidapi.com/v1/info', [
                 'username_or_id_or_url' => $username,
             ]);
+        Log::info('Status of fetch profile:', $response->status());
 
         if ($response->status() === 404) {
             throw new \RuntimeException('FATAL:Profile not found', 404);
