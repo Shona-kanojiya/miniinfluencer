@@ -4,6 +4,8 @@ type Snapshot = {
   id: number;
   followers_count: number;
   captured_at: string;
+  following_count: number;
+  post_count: number;
 };
 
 type Profile = {

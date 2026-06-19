@@ -1,10 +1,14 @@
 import { useForm } from '@inertiajs/react';
 
 export default function Login() {
-  const { data, setData, post, errors, processing } = useForm({
+  const { data, setData, post, errors, processing } = useForm<{
+    email: string;
+    password: string;
+    auth?: string;
+    }>({
     email: '',
     password: '',
-  });
+    });
 
   function submit(e: any) {
     e.preventDefault();
